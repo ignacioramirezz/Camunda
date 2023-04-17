@@ -1,0 +1,40 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Coca Cola.",
+          "value": "coca cola"
+        },
+        {
+          "label": "Sprite",
+          "value": "sprite"
+        },
+        {
+          "label": "No, gracias.",
+          "value": "negativo"
+        }
+      ],
+      "label": "Gaseosas",
+      "type": "radio",
+      "id": "Field_16ihbh0",
+      "key": "gaseosa",
+      "properties": {},
+      "description": "Seleccione la gaseosa desea o si no va a elegir",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "negativo",
+      "disabled": false
+    }
+  ],
+  "type": "default",
+  "id": "Form_08yk6vx",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}
