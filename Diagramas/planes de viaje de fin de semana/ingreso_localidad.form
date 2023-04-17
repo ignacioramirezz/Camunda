@@ -1,0 +1,20 @@
+{
+  "components": [
+    {
+      "label": "Localidad",
+      "type": "textfield",
+      "id": "Field_0xwvykt",
+      "key": "localidad",
+      "description": "Ingrese la localidad donde se encuentra actualmente"
+    }
+  ],
+  "type": "default",
+  "id": "ingresoLocalidad",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

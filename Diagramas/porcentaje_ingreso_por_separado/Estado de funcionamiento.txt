@@ -1,0 +1,8 @@
+Este caso de diagrama de proceso se realiza un cargado de informacion como primero el dinero ingresado, luego el token avanzada a la nueva actividad y lo que se hace es el cargado 
+del porcentaje
+
+Teniendo dos casos posibles usando un Gateway Exclusivo:
+
+1- Caso el dinero ingresado sea mayor a 100 se debe realizar un incremento con el porcentaje que ingreso el usuario. (bien!)
+ 
+2- Caso el dinero ingresado sea menor a 100 se debe realizar un descuento con el porcentaje que ingreso el usuario. (bien!)

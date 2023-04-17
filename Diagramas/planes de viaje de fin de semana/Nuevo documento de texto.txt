@@ -1,0 +1,34 @@
+En el siguiente ejercicio lo que se platea es lo siguiente.
+
+PROCESO DE RECOMENDACION DE DESTINO DE VIAJE DENTRO DE BUENOS AIRES O CORDOBA
+
+1. Se debe realizar "Cargado pasajero", donde la persona ingrese su nombre y apellido 
+  
+ --> tiene una restriccion que debe ser mayor de edad si o si.
+
+  Si cumple la condicion avanza hacia el paso 2. En lo contrario realiza lo siguiente
+
+    * ingreso de variable -> edad !!!!
+
+  Camino alternativo 
+
+    1.1. El usuario que ingresa es menor de edad entonces se dispara un error de cargado y le anuncia que no puede viajar (Finaliza)
+
+
+
+
+2. Avanzo a ingresar el "Cargado de localidad", la persona debe ingresar si es de Buenos Aires o de Cordoba. 
+ 
+   Camino alternativo
+
+     2.1 Si la persona ingresa otra localidad o otra cosa, salta un servicio de java para anunciar que no hay servicio a un destino.
+
+
+
+
+Testeo de flujo:
+
+a. caso donde ingreso un valor no valido como 0 (indicado en camunda como una restriccion necesario) ->   bien!!!
+b. caso de un menor de edad que no puede viajar  ->  bien!!!
+c. caso de donde una persona sea mayor de edad pero pone un destino invalido que la empresa no tiene ningun tipo de destino disponible -> bien!!!
+d. caso donde una persona mayor de edad desea viajar en ingresa destino "cordoba" y debe dar Villa General Belgrano -> bien!!!

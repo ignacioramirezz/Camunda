@@ -1,0 +1,28 @@
+{
+  "components": [
+    {
+      "label": "dinero",
+      "type": "number",
+      "id": "Field_13c490e",
+      "key": "dinero",
+      "description": "Ingrese el dinero que aporta"
+    },
+    {
+      "label": "porcentaje",
+      "type": "number",
+      "id": "Field_09fsy89",
+      "key": "porcentaje",
+      "description": "Ingrese el porcentaje para realizar la operacion",
+      "validate": {}
+    }
+  ],
+  "type": "default",
+  "id": "pedirDatos",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

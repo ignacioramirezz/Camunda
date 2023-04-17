@@ -1,0 +1,10 @@
+Funciona de forma correcta los dos casos:
+
+--- Incremento: 
+
+    Consiste en el caso de que el usuario ingrese el numero mayor a 100 se va realizar un incremento con el porcentaje ingresado (bien)
+
+--- Descuento:
+
+    Consiste en el caso de que el usuario ingrese un numero menor a 100 se va realizar un descuento con el porcentaje ingresado (bien)
+

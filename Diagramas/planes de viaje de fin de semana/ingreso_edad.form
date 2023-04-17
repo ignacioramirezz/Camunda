@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "label": "Edad",
+      "type": "number",
+      "id": "Field_0j1w10z",
+      "key": "edad",
+      "description": "Ingrese la edad para recomendar destino de viaje ",
+      "validate": {
+        "min": 0,
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "ingresoEdad",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

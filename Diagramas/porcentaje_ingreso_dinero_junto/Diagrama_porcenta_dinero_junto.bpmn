@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0v51l9a" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_0ma601k" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="monto inicial">
+      <bpmn:outgoing>Flow_0myilva</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_0qmodcb" name="ingresar dinero y porcentaje" camunda:formRef="pedirDatos" camunda:formRefBinding="latest">
+      <bpmn:extensionElements>
+        <camunda:executionListener class="fecha_4_4_nuevo.Error" event="start" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0myilva</bpmn:incoming>
+      <bpmn:outgoing>Flow_03xogg1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_0yygtwm" name="Realizar descuento" camunda:class="fecha_4_4_nuevo.Tarea_descuento">
+      <bpmn:incoming>Flow_1q1jcou</bpmn:incoming>
+      <bpmn:outgoing>Flow_084vg6k</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_0rqmkru">
+      <bpmn:incoming>Flow_03xogg1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1q1jcou</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1ause7k</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="Event_08d7657">
+      <bpmn:incoming>Flow_084vg6k</bpmn:incoming>
+      <bpmn:incoming>Flow_0nmx048</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_1dgw3lf" name="Realizar recargo" camunda:class="fecha_4_4_nuevo.Tarea_incremento">
+      <bpmn:incoming>Flow_1ause7k</bpmn:incoming>
+      <bpmn:outgoing>Flow_0nmx048</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0myilva" sourceRef="StartEvent_1" targetRef="Activity_0qmodcb" />
+    <bpmn:sequenceFlow id="Flow_1q1jcou" sourceRef="Gateway_0rqmkru" targetRef="Activity_0yygtwm">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${dinero&lt;=100}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_084vg6k" sourceRef="Activity_0yygtwm" targetRef="Event_08d7657" />
+    <bpmn:sequenceFlow id="Flow_1ause7k" sourceRef="Gateway_0rqmkru" targetRef="Activity_1dgw3lf">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${dinero&gt;100}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0nmx048" sourceRef="Activity_1dgw3lf" targetRef="Event_08d7657" />
+    <bpmn:sequenceFlow id="Flow_03xogg1" sourceRef="Activity_0qmodcb" targetRef="Gateway_0rqmkru" />
+    <bpmn:textAnnotation id="TextAnnotation_1wem187">
+      <bpmn:text>El usuario ingresa el porcentaje que luego se le va aplicar al dinero ingresado</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1twqszu" sourceRef="TextAnnotation_1wem187" targetRef="Activity_0qmodcb" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0ma601k">
+      <bpmndi:BPMNShape id="TextAnnotation_1wem187_di" bpmnElement="TextAnnotation_1wem187">
+        <dc:Bounds x="310" y="80" width="170" height="99" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rssl93_di" bpmnElement="Activity_0yygtwm">
+        <dc:Bounds x="620" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0rqmkru_di" bpmnElement="Gateway_0rqmkru" isMarkerVisible="true">
+        <dc:Bounds x="495" y="245" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_08d7657_di" bpmnElement="Event_08d7657">
+        <dc:Bounds x="852" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1hekkfw_di" bpmnElement="Activity_1dgw3lf">
+        <dc:Bounds x="620" y="360" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0qygw8h" bpmnElement="StartEvent_1">
+        <dc:Bounds x="172" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="159" y="295" width="62" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18x4c9b_di" bpmnElement="Activity_0qmodcb">
+        <dc:Bounds x="300" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1twqszu_di" bpmnElement="Association_1twqszu">
+        <di:waypoint x="375" y="179" />
+        <di:waypoint x="354" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1q1jcou_di" bpmnElement="Flow_1q1jcou">
+        <di:waypoint x="545" y="270" />
+        <di:waypoint x="620" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_084vg6k_di" bpmnElement="Flow_084vg6k">
+        <di:waypoint x="720" y="270" />
+        <di:waypoint x="852" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03xogg1_di" bpmnElement="Flow_03xogg1">
+        <di:waypoint x="400" y="270" />
+        <di:waypoint x="495" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ause7k_di" bpmnElement="Flow_1ause7k">
+        <di:waypoint x="520" y="295" />
+        <di:waypoint x="520" y="390" />
+        <di:waypoint x="620" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nmx048_di" bpmnElement="Flow_0nmx048">
+        <di:waypoint x="720" y="400" />
+        <di:waypoint x="870" y="400" />
+        <di:waypoint x="870" y="288" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0myilva_di" bpmnElement="Flow_0myilva">
+        <di:waypoint x="208" y="270" />
+        <di:waypoint x="300" y="270" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

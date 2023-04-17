@@ -1,0 +1,20 @@
+{
+  "components": [
+    {
+      "label": "dinero",
+      "type": "number",
+      "id": "Field_174safv",
+      "key": "dinero",
+      "description": "ingrese el dinero para realizar la compra"
+    }
+  ],
+  "type": "default",
+  "id": "pedirdinero",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

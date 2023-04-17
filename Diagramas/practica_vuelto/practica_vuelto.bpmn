@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_076zo7o" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_1cqt3zq" isExecutable="true" camunda:versionTag="20">
+    <bpmn:startEvent id="StartEvent_1" name="">
+      <bpmn:outgoing>Flow_0w7mym3</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0w7mym3" sourceRef="StartEvent_1" targetRef="Activity_1j97xp4" />
+    <bpmn:endEvent id="Event_0l66064">
+      <bpmn:incoming>Flow_11jdksi</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_11jdksi" sourceRef="Activity_139lzap" targetRef="Event_0l66064" />
+    <bpmn:serviceTask id="Activity_139lzap" name="Registrar Dinero" camunda:class="com.example.workflow.Prueba">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_0t7dx4n</bpmn:incoming>
+      <bpmn:outgoing>Flow_11jdksi</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0t7dx4n" sourceRef="Activity_1j97xp4" targetRef="Activity_139lzap" />
+    <bpmn:userTask id="Activity_1j97xp4" name="ingresa dinero" camunda:formRef="ingresoDinero" camunda:formRefBinding="latest">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_0w7mym3</bpmn:incoming>
+      <bpmn:outgoing>Flow_0t7dx4n</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1cqt3zq">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="162" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="75" y="385" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_09egwvr_di" bpmnElement="Activity_139lzap">
+        <dc:Bounds x="460" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0l66064_di" bpmnElement="Event_0l66064">
+        <dc:Bounds x="682" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0nzrl94_di" bpmnElement="Activity_1j97xp4">
+        <dc:Bounds x="270" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0w7mym3_di" bpmnElement="Flow_0w7mym3">
+        <di:waypoint x="198" y="160" />
+        <di:waypoint x="270" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11jdksi_di" bpmnElement="Flow_11jdksi">
+        <di:waypoint x="560" y="160" />
+        <di:waypoint x="682" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0t7dx4n_di" bpmnElement="Flow_0t7dx4n">
+        <di:waypoint x="370" y="160" />
+        <di:waypoint x="460" y="160" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
