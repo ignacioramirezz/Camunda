@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1qk8ii6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_0xx5cv1" isExecutable="true">
+    <bpmn:endEvent id="Event_0cfiv01">
+      <bpmn:incoming>Flow_0gynkpn</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0gynkpn" sourceRef="Activity_1g67kxz" targetRef="Event_0cfiv01" />
+    <bpmn:sequenceFlow id="Flow_1sys3d8" sourceRef="StartEvent_1" targetRef="Activity_1g67kxz" />
+    <bpmn:userTask id="Activity_1g67kxz" name="Reparacion del  Socio">
+      <bpmn:incoming>Flow_1sys3d8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gynkpn</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1sys3d8</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_01k0u30" messageRef="Message_3l8p068" />
+    </bpmn:startEvent>
+  </bpmn:process>
+  <bpmn:message id="Message_3l8p068" name="PedirAyudaSocio" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0xx5cv1">
+      <bpmndi:BPMNShape id="Event_0cfiv01_di" bpmnElement="Event_0cfiv01">
+        <dc:Bounds x="472" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ugnqb2_di" bpmnElement="Activity_1g67kxz">
+        <dc:Bounds x="280" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1tj3xpo_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0gynkpn_di" bpmnElement="Flow_0gynkpn">
+        <di:waypoint x="380" y="120" />
+        <di:waypoint x="472" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sys3d8_di" bpmnElement="Flow_1sys3d8">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="280" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
